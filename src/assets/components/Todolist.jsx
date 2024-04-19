@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Todolist.css';
 
+const todos = ["Learn React", "Be awesome!", "Another To Do"]
+
 function Todolist() {
 	return (
 		<>
@@ -16,16 +18,19 @@ function Todolist() {
 			</form>
 			<hr />
 			<h2>Todos</h2>
-			<div className="todos">
-				<div className="todos__item">
-					<input type="checkbox" name="todo-1" id="todo-1" />
-					<label htmlFor="todo-1">Learn React</label>
-				</div>
-				<div className="todos__item">
-					<input type="checkbox" name="todo-2" id="todo-2" />
-					<label htmlFor="todo-2">Be Awesome!</label>
-				</div>
-			</div>
+
+			<ul className="todos">
+				{todos.map((todo, index) => (
+					<li key={`todo-${index}`} className="todos__item">
+						<input
+							type="checkbox"
+							name={`todo-${index}`}
+							id={`todo-${index}`}
+						/>
+						<label htmlFor={`todo-${index}`}>{todo}</label>
+					</li>
+				))}
+			</ul>
 		</>
 	);
 }
