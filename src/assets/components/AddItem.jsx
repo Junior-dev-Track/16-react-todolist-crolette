@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './AddItem.css'
 
 function AddItem({ handleAddItem }) {
 	const [title, setTitle] = useState('');

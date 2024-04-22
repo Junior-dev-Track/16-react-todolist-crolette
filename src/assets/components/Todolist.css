@@ -1,15 +1,11 @@
 .todos {
     display: flex;
     flex-direction: column;
+}
+
+
+.filters {
+    display: flex;
+    justify-content: center;
     gap: 16px;
 }
-
-.todos__item {
-    display: flex;
- 
-}
-
-h2 {
-    font-size: 2em;
-}
-

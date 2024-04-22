@@ -41,17 +41,14 @@ export default function Todolist() {
 	};
 
 	const handleFilterAll = () => {
-		console.log('handleFilterAll');
 		setFilter(null);
 	};
 
 	const handleFilterToDo = () => {
-		console.log('handleFilterAll');
 		setFilter(false);
 	};
 
 	const handleFilterDone = () => {
-		console.log('handleFilterDone');
 		setFilter(true);
 	};
 
@@ -77,7 +74,7 @@ export default function Todolist() {
 		<>
 			<Additem handleAddItem={handleAddItem} />
 			<hr />
-			<ul>
+			<ul className="todos">
 				{todos
 					.filter((todo) => filter === null || todo.done === filter)
 					.map((todo) => (
@@ -90,7 +87,7 @@ export default function Todolist() {
 						</li>
 					))}
 			</ul>
-			<div>
+			<div className='filters'>
 				{/* {countToDo} */}
 				<Button onClick={handleFilterAll} textButton={`All To Do's`} />
 				{/* {countToDo - coutToDoDone} */}
