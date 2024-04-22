@@ -18,6 +18,8 @@ export default function Todolist() {
 	// Save todos to localStorage whenever todos change
 	useEffect(() => {
 		localStorage.setItem('todos', JSON.stringify(todos));
+		setCountToDoDone(todos.filter((todo) => todo.done === true).length);
+		setCountToDo(todos.filter((todo) => todo.done === false).length);
 	}, [todos]);
 
 	const getMaxId = () => {
@@ -37,19 +39,14 @@ export default function Todolist() {
 				title: title,
 			},
 		]);
-		setCountToDo(countToDo + 1);
 	};
 
-	const handleFilterAll = () => {
-		setFilter(null);
+	const handleFilter = (filterType) => {
+		setFilter(filterType);
 	};
 
-	const handleFilterToDo = () => {
-		setFilter(false);
-	};
-
-	const handleFilterDone = () => {
-		setFilter(true);
+	const handleClearDone = () => {
+		setTodos(todos.filter((todo) => todo.done === false));
 	};
 
 	const handleChangeTodo = (todoToModify) => {
@@ -62,18 +59,16 @@ export default function Todolist() {
 				}
 			})
 		);
-		setCountToDoDone(todos.filter((todo) => todo.done === true).length);
 	};
 
 	const handleDelete = (todoId) => {
 		setTodos(todos.filter((todo) => todo.id !== todoId));
-		setCountToDo(countToDo - 1);
 	};
 
 	return (
 		<>
 			<Additem handleAddItem={handleAddItem} />
-			<hr />
+
 			<ul className="todos">
 				{todos
 					.filter((todo) => filter === null || todo.done === filter)
@@ -87,13 +82,18 @@ export default function Todolist() {
 						</li>
 					))}
 			</ul>
-			<div className='filters'>
-				{/* {countToDo} */}
-				<Button onClick={handleFilterAll} textButton={`All To Do's`} />
-				{/* {countToDo - coutToDoDone} */}
-				<Button onClick={handleFilterToDo} textButton={'Filter To Do'} />
-				{/* {coutToDoDone} */}
-				<Button onClick={handleFilterDone} textButton={'Filter Done'} />
+			<div className="filters">
+				<p>{countToDo} items left</p>
+				<div className="filters__buttons">
+
+				<Button onClick={() => handleFilter(null)} textButton={`All`} />
+				<Button
+					onClick={() => handleFilter(false)}
+					textButton={'Active'}
+				/>
+				<Button onClick={() => handleFilter(true)} textButton={'Completed'} />
+				</div>
+				<Button onClick={handleClearDone} textButton={'Clear Completed'} />
 			</div>
 		</>
 	);

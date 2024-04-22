@@ -2,14 +2,15 @@ import { useState } from 'react'
 import './assets/components/reset.css'
 import './App.css'
 import Todolist from './assets/components/Todolist'
-import Header from './assets/components/Header'
+import './assets/components/Header.css';
 
 
 function App() {
 
   return (
     <>
-      <Header />
+      <header>
+      </header>
       <Todolist />
     </>
   )

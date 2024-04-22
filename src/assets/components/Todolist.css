@@ -6,6 +6,27 @@
 
 .filters {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     gap: 16px;
+    padding: 16px;
+
+    button {
+        background-color: unset;
+        filter: opacity(0.5)
+    }
+}
+
+.task__buttons {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85em;
+
+}
+
+@media screen and (width <=420px) { 
+    .filters {
+        flex-direction: column;
+    }
+    
 }

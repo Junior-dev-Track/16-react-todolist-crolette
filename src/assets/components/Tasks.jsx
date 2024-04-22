@@ -27,31 +27,48 @@ export default function Task({ todo, onChangeTodo, onDelete }) {
 							type="text"
 							value={todo.title}
 							onChange={(e) => onChangeTodo({ ...todo, title: e.target.value })}
+							onKeyDown={(e) => {
+								if (e.key === 'Enter') {
+									onChangeTodo({
+										...todo,
+										title: e.target.value,
+									});
+									setIsEditing(!isEditing);
+								}
+							}}
 						/>
 					</>
 				) : (
 					<>
-						<label for={todo.id}>{todo.title}</label>
+						<label htmlFor={todo.id}>{todo.title}</label>
 					</>
 				)}
 			</div>
-			<div className="form__buttons">
+			<div className="task__buttons">
 				{isEditing ? (
 					<>
 						<Button
 							onClick={() => setIsEditing(!isEditing)}
-							textButton={'Sauver'}
+							textButton={<i className="fa-solid fa-check"></i>}
 						/>
 					</>
 				) : (
 					<>
 						<Button
 							onClick={() => setIsEditing(!isEditing)}
-							textButton={'Modifier'}
+							textButton={<i className="fa-solid fa-pen"></i>}
 						/>
 					</>
 				)}
-				<Button onClick={() => onDelete(todo.id)} textButton={'Delete'} className={`btn--warning`} />
+				{todo.done ? (
+					<>
+						<Button
+							onClick={() => onDelete(todo.id)}
+							textButton={<i className="fa-solid fa-trash"></i>}
+							className={`btn--warning`}
+						/>
+					</>
+				) : null}
 			</div>
 		</>
 	);

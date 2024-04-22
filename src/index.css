@@ -1,50 +1,118 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 18px;
+	font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: hsl(235, 21%, 11%);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+form,
+.todos__item,
+.filters {
+	background-color: hsl(235, 24%, 19%);
+}
+
+header {
+	background-repeat: no-repeat;
+	background-image: url(./images/bg-desktop-dark.jpg);
+
+	width: 100vw;
+	height: 450px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -10;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+	color: #535bf2;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  /* place-items: center; */
-  min-width: 320px;
-  min-height: 100vh;
+	margin: 0;
+	display: flex;
+	/* place-items: center; */
+	min-width: 320px;
+	min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	font-size: 3.2em;
+	line-height: 1.1;
+  letter-spacing: 0.5em;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 36px;
+
 }
 
+input[type='checkbox']::before {
+	border: 1px solid whitesmoke;
+}
+
+input[type='text'] {
+	color: whitesmoke;
+}
+
+button:hover {
+	border-color: #646cff;
+	background-color: #505050;
+}
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+	:root {
+		color: #213547;
+		background-color: hsl(0, 0%, 98%);
+	}
+	a:hover {
+		color: #747bff;
+	}
+
+	button:hover {
+		border-color: #646cff;
+		background-color: hsl(234, 39%, 85%);
+	}
+
+	input[type='text'] {
+		color: unset;
+	}
+
+.todos__item {
+
+	&:hover {
+		background-color: hsl(234, 39%, 85%);
+	}
+}
+
+	header {
+		background-image: url(./images/bg-desktop-light.jpg);
+	}
+
+	input[type='checkbox']::before {
+		border-color: #213547;
+	}
+
+
+	form,
+	.todos__item,
+	.filters {
+		background-color: hsl(236, 33%, 92%);
+	}
+
+	button {
+		background-color: #f9f9f9;
+	}
 }

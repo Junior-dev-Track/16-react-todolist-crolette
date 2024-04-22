@@ -15,18 +15,22 @@ function AddItem({ handleAddItem }) {
 	}
 
 	return (
-		<>
-			<form action="submit" onSubmit={handleSubmit}>
+		<>	<div className="container">
+			<h1>TODO</h1>
+			<form action="submit" onSubmit={handleSubmit} className="form__todo">
 				<input
 					type="text"
 					name="todo"
 					value={title}
-					placeholder="Type a new todo"
+					placeholder="Create a new todo..."
 					onChange={handleChange}
 				/>
-				<button type="submit">Add todo</button>
-				
+				<button type="submit">
+					Add todo  <i className="fa-solid fa-plus"></i>
+				</button>
+
 			</form>
+		</div>
 		</>
 	);
 }

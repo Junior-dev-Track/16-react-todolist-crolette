@@ -18,8 +18,8 @@ time, mark, audio, button, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-        text-decoration: none;
-        color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 *, *::before, *::after{
@@ -53,14 +53,3 @@ table {
 }
 
 /* END RESET CSS */
-
-
-/* FOOTER LOGO CROLWEB */
-.footer__logo {
-  position: fixed;
-  text-align: center;
-  bottom: 0;
-  img {
-  width: 50px;
-  }
-}
