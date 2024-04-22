@@ -2,10 +2,8 @@ import { useState } from 'react';
 import Button from './Buttons';
 
 export default function Task({ todo, onChangeTodo, onDelete }) {
-	// const [editedTitle, setEditedTitle] = useState("");
 	const [isEditing, setIsEditing] = useState(false);
 
-	
 	return (
 		<>
 			<input
@@ -23,7 +21,6 @@ export default function Task({ todo, onChangeTodo, onDelete }) {
 				<>
 					<input
 						value={todo.title}
-						// onChange={(e) => setEditedTitle(e.target.value)}
 						onChange={(e) => onChangeTodo({ ...todo, title: e.target.value })}
 					/>
 				</>
