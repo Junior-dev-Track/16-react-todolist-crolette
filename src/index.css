@@ -23,9 +23,9 @@ form,
 header {
 	background-repeat: no-repeat;
 	background-image: url(./images/bg-desktop-dark.jpg);
-
+  background-size: cover;
 	width: 100vw;
-	height: 450px;
+	height: 350px;
 	position: absolute;
 	left: 0;
 	top: 0;
