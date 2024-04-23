@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './assets/styles/App.css';
-import './assets/styles/Header.css';
-import Todolist from './assets/components/Todolist';
-import Header from './assets/components/Header';
+import '../styles/App.css';
+import '../styles/Header.css';
+import Todolist from '../components/Todolist';
+import Header from '../components/Header';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>

@@ -26,6 +26,10 @@ button:focus-visible {
     }
 }
 
+.btn--active {
+  color: red;
+}
+
 @media (prefers-color-scheme: light) {
 	button {
 		background-color: #f9f9f9;
