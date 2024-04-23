@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Buttons.css';
+import '../styles/Buttons.css';
 
 export default function Button({onClick, textButton, className}) {
     return (

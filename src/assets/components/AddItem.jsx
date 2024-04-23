@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './AddItem.css'
+import '../styles/AddItem.css'
 
 function AddItem({ handleAddItem }) {
 	const [title, setTitle] = useState('');

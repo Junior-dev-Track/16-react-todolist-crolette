@@ -25,3 +25,14 @@ button:focus-visible {
         background-color: rgb(218, 56, 56);
     }
 }
+
+@media (prefers-color-scheme: light) {
+	button {
+		background-color: #f9f9f9;
+	}
+
+	button:hover {
+		border-color: #646cff;
+		background-color: hsl(234, 39%, 85%);
+	}
+}

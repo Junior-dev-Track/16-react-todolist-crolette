@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Button from './Buttons';
-import './Buttons.css';
-import './Tasks.css';
+
 
 export default function Task({ todo, onChangeTodo, onDelete }) {
 	const [isEditing, setIsEditing] = useState(false);

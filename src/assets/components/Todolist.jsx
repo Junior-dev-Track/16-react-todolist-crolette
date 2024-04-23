@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Todolist.css';
+import '../styles/Todolist.css';
 import Additem from './AddItem.jsx';
 import Task from './Tasks.jsx';
 import Button from './Buttons.jsx';
@@ -69,7 +69,7 @@ export default function Todolist() {
 		<>
 			<Additem handleAddItem={handleAddItem} />
 
-			<ul className="todos">
+			<ul className="todos container">
 				{todos
 					.filter((todo) => filter === null || todo.done === filter)
 					.map((todo) => (
@@ -82,7 +82,7 @@ export default function Todolist() {
 						</li>
 					))}
 			</ul>
-			<div className="filters">
+			<div className="filters container">
 				<p>{countToDo} items left</p>
 				<div className="filters__buttons">
 
