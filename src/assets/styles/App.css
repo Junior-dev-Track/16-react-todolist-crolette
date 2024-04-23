@@ -1,6 +1,10 @@
 @import './reset.css';
-@import '../styles/Buttons.css';
-@import '../styles/Tasks.css';
+@import './Buttons.css';
+@import './Tasks.css';
+@import './Header.css';
+@import './Footer.css';
+@import './AddItem.css';
+/* @import './index.css'; */
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
@@ -39,26 +43,11 @@ input[type='text'] {
 	font-family: inherit;
 }
 
-header {
-	background-repeat: no-repeat;
-	background-image: url(../../images/bg-desktop-dark.jpg);
-	background-size: cover;
-	width: 100vw;
-	height: 350px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -10;
-	margin-bottom: 24px;
+.filters {
+	display: flex;
+	grid-template-columns: 1fr 2fr 1fr;
 }
 
-.card {
-	padding: 2em;
-}
-
-.read-the-docs {
-	color: #888;
-}
 
 form,
 .todos__item,
@@ -78,7 +67,6 @@ a:hover {
 body {
 	margin: 0;
 	display: flex;
-	/* place-items: center; */
 	min-width: 320px;
 	min-height: 100vh;
 }
@@ -116,9 +104,6 @@ button:hover {
 		}
 	}
 
-	header {
-		background-image: url(../../images/bg-desktop-light.jpg);
-	}
 
 	input[type='checkbox']::before {
 		border-color: #213547;

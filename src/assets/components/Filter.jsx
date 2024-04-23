@@ -2,7 +2,7 @@ import Button from './Buttons';
 
 export default function Filter({ countToDo, handleFilter, handleClearDone }) {
 	return (
-		<div className="filters container">
+		<div className="filters">
 			<p>{countToDo} items left</p>
 			<div className="filters__buttons">
 				<Button

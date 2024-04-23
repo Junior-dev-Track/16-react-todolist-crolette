@@ -15,7 +15,7 @@ function AddItem({ handleAddItem }) {
 	}
 
 	return (
-		<>	<div className="container">
+		<>	
 			<h1>TODO</h1>
 			<form action="submit" onSubmit={handleSubmit} className="form__todo">
 				<input
@@ -30,7 +30,6 @@ function AddItem({ handleAddItem }) {
 				</button>
 
 			</form>
-		</div>
 		</>
 	);
 }

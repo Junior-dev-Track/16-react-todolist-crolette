@@ -67,7 +67,7 @@ export default function Todolist() {
 		<>
 			<Additem handleAddItem={handleAddItem} />
 
-			<ul className="todos container">
+			<ul className="todos">
 				{todos
 					.filter((todo) => filter === null || todo.done === filter)
 					.map((todo) => (
