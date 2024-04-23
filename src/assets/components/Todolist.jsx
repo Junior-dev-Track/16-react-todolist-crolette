@@ -3,6 +3,7 @@ import '../styles/Todolist.css';
 import Additem from './AddItem.jsx';
 import Task from './Tasks.jsx';
 import Button from './Buttons.jsx';
+import Filter from './Filter.jsx';
 
 export default function Todolist() {
 	const [todos, setTodos] = useState(() => {
@@ -11,14 +12,11 @@ export default function Todolist() {
 	});
 	const [filter, setFilter] = useState(null);
 	const [countToDo, setCountToDo] = useState(todos.length);
-	const [coutToDoDone, setCountToDoDone] = useState(
-		todos.filter((todo) => todo.done === true).length
-	);
+	
 
 	// Save todos to localStorage whenever todos change
 	useEffect(() => {
 		localStorage.setItem('todos', JSON.stringify(todos));
-		setCountToDoDone(todos.filter((todo) => todo.done === true).length);
 		setCountToDo(todos.filter((todo) => todo.done === false).length);
 	}, [todos]);
 
@@ -82,19 +80,11 @@ export default function Todolist() {
 						</li>
 					))}
 			</ul>
-			<div className="filters container">
-				<p>{countToDo} items left</p>
-				<div className="filters__buttons">
-
-				<Button onClick={() => handleFilter(null)} textButton={`All`} />
-				<Button
-					onClick={() => handleFilter(false)}
-					textButton={'Active'}
-				/>
-				<Button onClick={() => handleFilter(true)} textButton={'Completed'} />
-				</div>
-				<Button onClick={handleClearDone} textButton={'Clear Completed'} />
-			</div>
+			<Filter
+				countToDo={countToDo}
+				handleFilter={handleFilter}
+				handleClearDone={handleClearDone}
+			/>
 		</>
 	);
 }
