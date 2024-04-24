@@ -39,8 +39,7 @@ export default function Task({ todo, onChangeTodo, onDelete }) {
 				) : (
 					<>
 						<label htmlFor={todo.id}>
-							{todo.title} - {todo.tag} - Due date: {todo.date.getDate()}/
-							{todo.date.getMonth()+1}/{todo.date.getFullYear()}
+							{todo.title} - {todo.tag} - Due date: {todo.date}
 						</label>
 					</>
 				)}
