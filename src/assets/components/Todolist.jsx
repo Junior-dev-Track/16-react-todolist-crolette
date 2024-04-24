@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import '../styles/Todolist.css';
 import Additem from './AddItem.jsx';
 import Task from './Tasks.jsx';
-import Button from './Buttons.jsx';
 import Filter from './Filter.jsx';
 
 export default function Todolist() {
@@ -12,7 +11,6 @@ export default function Todolist() {
 	});
 	const [filter, setFilter] = useState(null);
 	const [countToDo, setCountToDo] = useState(todos.length);
-	
 
 	// Save todos to localStorage whenever todos change
 	useEffect(() => {
@@ -26,7 +24,7 @@ export default function Todolist() {
 			return Math.max(...todos.map((todo) => todo.id)) + 1;
 		}
 	};
-	const handleAddItem = (title) => {
+	const handleAddItem = (title, startDate) => {
 		const maxId = getMaxId();
 
 		setTodos([
@@ -34,7 +32,9 @@ export default function Todolist() {
 			{
 				id: maxId,
 				done: false,
+				date: startDate,
 				title: title,
+				tag: ''
 			},
 		]);
 	};
