@@ -4,8 +4,9 @@
 @import './Header.css';
 @import './Footer.css';
 @import './AddItem.css';
+@import './Calendar.css';
 @import "react-datepicker/dist/react-datepicker.css";
-@import '@zach.codes/react-calendar/dist/calendar-tailwind.css';
+/* @import '@zach.codes/react-calendar/dist/calendar-tailwind.css'; */
 /* @import './index.css'; */
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
@@ -18,10 +19,7 @@ html {
 	margin: 0 auto;
 }
 
-.rc-bg-white {
-    --tw-bg-opacity: .25;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-}
+
 
 @media (prefers-color-scheme: dark) {
 	body {
@@ -37,7 +35,7 @@ html {
 	}
 
 	a {
-		color: #646cff;
+		color: inherit;
 	}
 	a:hover {
 		color: #535bf2;

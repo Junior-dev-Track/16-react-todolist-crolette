@@ -20,28 +20,31 @@ export default function Calendar() {
 
 	return (
 		<>
+			<section className='calendar'>
+
 			<h1>Calendar</h1>
 			<MonthlyCalendar
 				currentMonth={currentMonth}
 				onCurrentMonthChange={(date) => setCurrentMonth(date)}
-			>
+				>
 				<MonthlyNav />
 				<MonthlyBody events={todos}>
 					<MonthlyDay
 						renderDay={(data) =>
 							data.map((todo) => (
 								<DefaultMonthlyEventItem
-									key={todo.id}
-									title={todo.title}
-
-									// Format the date here to be in the format you prefer
-									// date={format(item.date, 'k:mm')}
+								key={todo.id}
+								title={todo.title}
+								// tag={todo.tag}
+								// Format the date here to be in the format you prefer
+								// date={format(item.date, 'k:mm')}
 								/>
 							))
 						}
-					/>
+						/>
 				</MonthlyBody>
 			</MonthlyCalendar>
+						</section>
 		</>
 	);
 }

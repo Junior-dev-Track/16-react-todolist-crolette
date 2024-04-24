@@ -24,17 +24,20 @@ export default function Todolist() {
 			return Math.max(...todos.map((todo) => todo.id)) + 1;
 		}
 	};
-	const handleAddItem = (title, startDate) => {
+
+
+	const handleAddItem = (title, startDate, tag) => {
 		const maxId = getMaxId();
 
 		setTodos([
 			...todos,
 			{
+				// id: crypto.randomUUID(),
 				id: maxId,
 				done: false,
 				date: startDate,
-				title: title,
-				tag: ''
+				title,
+				tag,
 			},
 		]);
 	};
