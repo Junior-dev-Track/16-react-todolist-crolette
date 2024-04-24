@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Button from './Buttons';
 
-
 export default function Task({ todo, onChangeTodo, onDelete }) {
 	const [isEditing, setIsEditing] = useState(false);
 
@@ -44,21 +43,19 @@ export default function Task({ todo, onChangeTodo, onDelete }) {
 				)}
 			</div>
 			<div className="task__buttons">
-				{isEditing ? (
-					<>
-						<Button
-							onClick={() => setIsEditing(!isEditing)}
-							textButton={<i className="fa-solid fa-check"></i>}
-						/>
-					</>
-				) : (
-					<>
-						<Button
-							onClick={() => setIsEditing(!isEditing)}
-							textButton={<i className="fa-solid fa-pen"></i>}
-						/>
-					</>
-				)}
+				<>
+					<Button
+						onClick={() => setIsEditing(!isEditing)}
+						textButton={
+							isEditing ? (
+								<i className="fa-solid fa-check"></i>
+							) : (
+								<i className="fa-solid fa-pen"></i>
+							)
+						}
+					/>
+				</>
+
 				{todo.done ? (
 					<>
 						<Button

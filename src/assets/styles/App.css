@@ -8,8 +8,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+html {
+	color-scheme: dark;
+}
+
 #root {
 	margin: 0 auto;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color-scheme: dark;
+		color: rgba(255, 255, 255, 0.87);
+		background-color: hsl(235, 21%, 11%);
+	}
+
+	form,
+	.todos__item,
+	.filters {
+		background-color: hsl(235, 24%, 19%);
+	}
+
+	a {
+		color: #646cff;
+	}
+	a:hover {
+		color: #535bf2;
+	}
+	button:hover {
+		border-color: #646cff;
+		background-color: #505050;
+	}
 }
 
 body {
@@ -22,9 +51,6 @@ body {
 	font-size: 18px;
 	font-weight: 400;
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: hsl(235, 21%, 11%);
 	z-index: -200;
 	overflow-x: hidden;
 	font-synthesis: none;
@@ -48,20 +74,9 @@ input[type='text'] {
 	grid-template-columns: 1fr 2fr 1fr;
 }
 
-
-form,
-.todos__item,
-.filters {
-	background-color: hsl(235, 24%, 19%);
-}
-
 a {
 	font-weight: 500;
-	color: #646cff;
 	text-decoration: inherit;
-}
-a:hover {
-	color: #535bf2;
 }
 
 body {
@@ -80,38 +95,34 @@ h1 {
 	margin-bottom: 36px;
 }
 
-button:hover {
-	border-color: #646cff;
-	background-color: #505050;
-}
-
 @media (prefers-color-scheme: light) {
 	body {
+		color-scheme: light;
 		color: #213547;
 		background-color: hsl(0, 0%, 98%);
-	}
-	a:hover {
-		color: #747bff;
-	}
 
-	input[type='text'] {
-		color: unset;
-	}
-
-	.todos__item {
-		&:hover {
-			background-color: hsl(234, 39%, 85%);
+		a:hover {
+			color: #747bff;
 		}
-	}
 
+		input[type='text'] {
+			color: unset;
+		}
 
-	input[type='checkbox']::before {
-		border-color: #213547;
-	}
+		.todos__item {
+			&:hover {
+				background-color: hsl(234, 39%, 85%);
+			}
+		}
 
-	form,
-	.todos__item,
-	.filters {
-		background-color: hsl(236, 33%, 92%);
+		input[type='checkbox']::before {
+			border-color: #213547;
+		}
+
+		form,
+		.todos__item,
+		.filters {
+			background-color: hsl(236, 33%, 92%);
+		}
 	}
 }
